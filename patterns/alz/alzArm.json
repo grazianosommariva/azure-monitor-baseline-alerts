@@ -213,7 +213,7 @@
         {
             // Deploying AMBA custom policies. Note: all policies should eventually be moved to built-in policies and codebase will be reduced
             "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2019-05-05-preview",
+            "apiVersion": "2019-03-01",
             "name": "[variables('deploymentNames').AMBAPolicyDeploymentName]",
             "location": "[deployment().location]",
             "scope": "[concat('Microsoft.Management/managementGroups/', parameters('enterpriseScaleCompanyPrefix'))]",
@@ -234,7 +234,7 @@
         {
             // One of Azure's untold stories.....
             "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2019-05-05-preview",
+            "apiVersion": "2019-03-01",
             "name": "[concat('amba-PreparingToLaunch', copyIndex())]",
             "location": "[deployment().location]",
             "scope": "[concat('Microsoft.Management/managementGroups/', parameters('enterpriseScaleCompanyPrefix'))]",
@@ -262,7 +262,7 @@
             // Assigning AMBA Connectivity PolicySet to the connectivity management group if condition is true
             "condition": "[equals(parameters('enableAMBAConnectivity'), 'Yes')]",
             "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2019-05-05-preview",
+            "apiVersion": "2019-03-01",
             "name": "[variables('deploymentNames').AMBAConnectivityDeploymentName]",
             "scope": "[concat('Microsoft.Management/managementGroups/', parameters('connectivityManagementGroup'))]",
             "location": "[deployment().location]",
@@ -289,7 +289,7 @@
             // Assigning AMBA Identity PolicySet to the Indentity management group if condition is true
             "condition": "[equals(parameters('enableAMBAIdentity'), 'Yes')]",
             "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2019-05-05-preview",
+            "apiVersion": "2019-03-01",
             "name": "[variables('deploymentNames').AMBAIdentityDeploymentName]",
             "scope": "[concat('Microsoft.Management/managementGroups/', parameters('identityManagementGroup'))]",
             "location": "[deployment().location]",
@@ -316,7 +316,7 @@
             // Assigning AMBA LandingZone PolicySet to the LandingZone management group if condition is true
             "condition": "[equals(parameters('enableAMBALandingZone'), 'Yes')]",
             "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2019-05-05-preview",
+            "apiVersion": "2019-03-01",
             "name": "[variables('deploymentNames').AMBALandingZoneDeploymentName]",
             "scope": "[concat('Microsoft.Management/managementGroups/', parameters('LandingZoneManagementGroup'))]",
             "location": "[deployment().location]",
@@ -343,7 +343,7 @@
             // Assigning AMBA management PolicySet to the management management group if condition is true
             "condition": "[equals(parameters('enableAMBAManagement'), 'Yes')]",
             "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2019-05-05-preview",
+            "apiVersion": "2019-03-01",
             "name": "[variables('deploymentNames').AMBAManagementDeploymentName]",
             "scope": "[concat('Microsoft.Management/managementGroups/', parameters('managementManagementGroup'))]",
             "location": "[deployment().location]",
@@ -370,7 +370,7 @@
             // Assigning AMBA service health PolicySet to the service health management group if condition is true
             "condition": "[equals(parameters('enableAMBAServiceHealth'), 'Yes')]",
             "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2019-05-05-preview",
+            "apiVersion": "2019-03-01",
             "name": "[variables('deploymentNames').AMBAServiceHealthDeploymentName]",
             "scope": "[concat('Microsoft.Management/managementGroups/', parameters('enterpriseScaleCompanyPrefix'))]",
             "location": "[deployment().location]",
@@ -397,7 +397,7 @@
             // Assigning AMBA notification assets PolicySet to the pseudo management group if condition is true
             "condition": "[equals(parameters('enableAMBANotificationAssets'), 'Yes')]",
             "type": "Microsoft.Resources/deployments",
-            "apiVersion": "2019-05-05-preview",
+            "apiVersion": "2019-03-01",
             "name": "[variables('deploymentNames').AMBANotificationAssetsDeploymentName]",
             "scope": "[concat('Microsoft.Management/managementGroups/', parameters('enterpriseScaleCompanyPrefix'))]",
             "location": "[deployment().location]",
